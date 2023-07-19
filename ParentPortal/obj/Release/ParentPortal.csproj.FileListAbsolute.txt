@@ -1,0 +1,28 @@
+D:\Parents\ParentDBIntegration\ParentPortal\bin\ParentPortal.dll
+D:\Parents\ParentDBIntegration\ParentPortal\bin\ParentPortal.pdb
+D:\Parents\ParentDBIntegration\ParentPortal\bin\FacesheetPA.dll
+D:\Parents\ParentDBIntegration\ParentPortal\obj\Release\ParentPortal.csprojResolveAssemblyReference.cache
+D:\Parents\ParentDBIntegration\ParentPortal\obj\Release\ParentPortal.dll
+D:\Parents\ParentDBIntegration\ParentPortal\obj\Release\ParentPortal.pdb
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\bin\ParentPortal.dll
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\bin\ParentPortal.pdb
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\obj\Release\ParentPortal.csprojResolveAssemblyReference.cache
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\obj\Release\ParentPortal.dll
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\obj\Release\ParentPortal.pdb
+D:\Melmark Last Projects\Paarent Portal\ParentPortal\bin\FacesheetPA.pdb
+E:\MelmarkLast_2-7-14\Paarent Portal\ParentPortal\bin\ParentPortal.dll
+E:\MelmarkLast_2-7-14\Paarent Portal\ParentPortal\bin\ParentPortal.pdb
+E:\MelmarkLast_2-7-14\Paarent Portal\ParentPortal\obj\Release\ParentPortal.csprojResolveAssemblyReference.cache
+E:\MelmarkLast_2-7-14\Paarent Portal\ParentPortal\obj\Release\ParentPortal.dll
+E:\MelmarkLast_2-7-14\Paarent Portal\ParentPortal\obj\Release\ParentPortal.pdb
+E:\Master Page_Design\Paarent Portal\ParentPortal\bin\ParentPortal.dll
+E:\Master Page_Design\Paarent Portal\ParentPortal\bin\ParentPortal.pdb
+E:\Master Page_Design\Paarent Portal\ParentPortal\bin\Facesheet.pdb
+E:\Master Page_Design\Paarent Portal\ParentPortal\obj\Release\ParentPortal.csprojResolveAssemblyReference.cache
+E:\Master Page_Design\Paarent Portal\ParentPortal\obj\Release\ParentPortal.dll
+E:\Master Page_Design\Paarent Portal\ParentPortal\obj\Release\ParentPortal.pdb
+D:\Dev Server\Source Codes\107Parent1.3\ParentPortal\bin\ParentPortal.dll
+D:\Dev Server\Source Codes\107Parent1.3\ParentPortal\bin\ParentPortal.pdb
+D:\Dev Server\Source Codes\107Parent1.3\ParentPortal\obj\Release\ParentPortal.csprojResolveAssemblyReference.cache
+D:\Dev Server\Source Codes\107Parent1.3\ParentPortal\obj\Release\ParentPortal.dll
+D:\Dev Server\Source Codes\107Parent1.3\ParentPortal\obj\Release\ParentPortal.pdb

@@ -1,0 +1,154 @@
+﻿@model ParentPortal.Models.ActivityList
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Activity Details</title>
+    <script src="~/Documents/JS/jquery-1.8.2.js"></script>
+
+    <script type="text/javascript">
+
+
+       
+
+       
+    </script>
+   
+
+</head>
+<body>
+     <style>
+        
+    </style>
+   
+    @if (ViewBag.AType == "Placement")
+    {
+        if (ViewBag.school == "PA")
+        {
+          <table style="width:100%;" class="gridStyle">
+          <thead>
+             <tr class="HeaderStyle" style="width:100%;">
+           
+            <td style="width: 15%"><b>Placement Type</b>
+            </td>
+            <td style="width: 15%"><b>Program</b>
+            </td>
+            <td style="width: 15%"><b>Primary Nurse</b>
+            </td>            
+             <td style="width: 15%"><b>Unit Clerk</b>
+            </td>
+            <td style="width: 15%"><b>Behaviour Analyst</b>
+            </td>
+            <td style="width: 12%"><b>Expired On</b>
+            </td>
+             <td style="width: 13%"><b>Created On</b>
+            </td>
+
+             </tr>
+            </thead>
+
+          
+            @foreach (var item in Model.ActivityListInfo)
+            {
+             <tr>        
+              <td>@item.Program</td>
+              <td>@item.ActivityType</td>
+              <td>@item.PrimaryNurse</td>
+              <td>@item.UnitClerk</td>
+              <td>@item.BehaviourAnalyst</td>
+              <td>@item.ExpiredOn.Value.ToString("dd/MM/yyyy")</td>
+              <td>@item.CreatedOn.Value.ToString("dd/MM/yyyy")</td>
+        
+            </tr>
+            }
+          </table>
+        }
+        else
+        {
+        
+                  <table style="width:100%;" class="gridStyle">
+          <thead>
+             <tr class="HeaderStyle" style="width:100%;">
+           
+            <td style="width: 15%"><b>Placement Type</b>
+            </td>
+            <td style="width: 15%"><b>Program</b>
+            </td>
+            
+            <td style="width: 12%"><b>Expired On</b>
+            </td>
+             <td style="width: 13%"><b>Created On</b>
+            </td>
+
+             </tr>
+            </thead>
+
+          
+            @foreach (var item in Model.ActivityListInfo)
+            {
+             <tr>        
+              <td>@item.Program</td>
+              <td>@item.ActivityType</td>
+             
+              <td>@item.ExpiredOn.Value.ToString("dd/MM/yyyy")</td>
+              <td>@item.CreatedOn.Value.ToString("dd/MM/yyyy")</td>
+        
+            </tr>
+            }
+          </table>
+         
+        }
+    }
+    else
+    {
+    
+     <table style="width:100%;" class="gridStyle">
+      <thead>
+        <tr class="HeaderStyle">
+           
+            <td style="width: 20%"><b>Activity Name</b>
+            </td>
+            <td style="width: 20%"><b>Date</b>
+            </td>
+            <td style="width: 15%"><b>Status</b>
+            </td>            
+             <td style="width: 20%"><b>Activity Type</b>
+            </td>
+            <td style="width: 12%"><b>Expired On</b>
+            </td>
+             <td style="width: 13%"><b>Created On</b>
+            </td>
+
+        </tr>
+    </thead>
+
+          
+    @foreach (var item in Model.ActivityListInfo)
+    {
+    <tr>        
+        <td>@item.ActivityName</td>
+        <td>@item.Date.Value.ToString("dd/MM/yyyy")</td>
+        <td>@item.Status</td>
+         <td>@item.ActivityType</td>
+        <td>@item.ExpiredOn.Value.ToString("dd/MM/yyyy")</td>
+        <td>@item.CreatedOn.Value.ToString("dd/MM/yyyy")</td>
+        
+    </tr>
+    }
+</table>
+      
+    
+    
+    }
+
+       
+    
+</body>
+</html>
+

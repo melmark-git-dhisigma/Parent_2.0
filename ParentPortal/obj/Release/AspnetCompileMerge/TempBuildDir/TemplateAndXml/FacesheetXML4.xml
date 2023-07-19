@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<States>
+  <State Name="NE">
+    <Mapping>
+  
+
+    <Mapping Column="template" PlaceHolder="plcPhysicianFullName"/>
+    <Mapping Column="template" PlaceHolder="plcPhysicianPhone"/>
+    <Mapping Column="template" PlaceHolder="plcPhysicianAddress"/>
+
+    <Mapping Column="template" PlaceHolder="plcInsuranceType"/>
+    <Mapping Column="template" PlaceHolder="plcPolicyNumber"/>
+    <Mapping Column="template" PlaceHolder="plcPolicyHolder"/>
+
+    <Mapping Column="template" PlaceHolder="plcLastPhysicalExamDate"/>
+    <Mapping Column="template" PlaceHolder="plcMedicalCondition"/>
+    <Mapping Column="template" PlaceHolder="plcAllergies"/>
+    <Mapping Column="template" PlaceHolder="plcCurrentMedications"/>
+    <Mapping Column="template" PlaceHolder="plcSelfPreservationAbility"/>
+    <Mapping Column="template" PlaceHolder="plcSignificantBehaviorCharescteristics"/>
+
+    <Mapping Column="template" PlaceHolder="plcCapabilities"/>
+    <Mapping Column="template" PlaceHolder="plcLimitations"/>
+    <Mapping Column="template" PlaceHolder="plcPreferances"/>
+
+  </Mapping>
+
+  </State>
+</States>

@@ -1,0 +1,73 @@
+﻿@model ParentPortal.Models.ProgressGrid
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProgressView</title>
+    <script src="~/Documents/JS/jquery-1.8.2.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SetColor($('#btnrpt'));
+        });
+        function showProgress(IEPId, Status) {
+           
+            $('#divProgress').hide();
+            window.location.href = "/Progress/ReportData/?Vals=" + IEPId + '-' + Status;
+            //$.get("../Progress/ReportData/?Vals=" + IEPId + '-' + Status, function (data) {
+            //    $('#ContentArea').html(data);
+            //});
+        }
+    </script>
+
+
+</head>
+<body>
+
+    <div>
+
+        <table style="width:100%;" class="gridStyle">
+    <thead>
+        <tr class="HeaderStyle">
+           
+            <td style="width: 23%"><b>IEP Start Date</b>
+            </td>
+            <td style="width: 30%"><b>IEP End Date</b>
+            </td>
+            <td style="width: 23%"><b>Status</b>
+
+            </td>
+            
+             <td style="width: 23%"><b>View</b>
+            </td>
+        </tr>
+    </thead>
+
+          
+    @foreach (var item in Model.ProgressReports)
+    {
+    <tr>        
+        <td>@item.startdate.ToString("MM/dd/yyyy").Replace('-', '/')</td>
+        <td>@item.enddate.ToString("MM/dd/yyyy").Replace('-', '/')</td>
+        <td>@item.Status</td>
+  
+        <td>
+
+            <img id="@item.iepid" src="../../Documents/Images/ViewAll.PNG" style="cursor:pointer;height:23px;width:25px;" onclick="showProgress(this.id,'@item.Status')" />
+
+
+        </td>
+    </tr>
+    }
+</table>
+
+
+       
+    </div>
+</body>
+</html>

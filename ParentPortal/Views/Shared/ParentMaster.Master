@@ -1,0 +1,514 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="../../Documents/CSS/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+    <link href="../../Documents/CSS/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="../../Documents/JS/jquery-1.8.2.js"></script>
+    <script src="../../Documents/JS/jquery.validate.js"></script>
+    <script src="../../Documents/JS/jquery.validate.min.js"></script>
+    <script src="../../Documents/JS/jquery.form.js"></script>
+    <script src="../../Documents/JS/jquery.validationEngine.js"></script>
+    <script src="../../Documents/JS/jquery.validationEngine-en.js"></script>
+    <script src="../../Documents/JS/jquery.unobtrusive-ajax.js"></script>
+    <script src="../../Documents/JS/jquery.unobtrusive-ajax.min.js"></script>
+    <link href="../../Documents/CSS/style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        body {
+            background: #f2f5ff;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: bold;
+        }
+
+        .clear {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            clear: both;
+        }
+
+        div.mainwrapper {
+            width: 1024px;
+            min-height: 300px;
+            height: auto !important;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 10px 4px #999;
+            border-right: 1px solid #FFFFFF;
+        }
+
+        h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            color: #006a4d;
+            margin: 10px 0 0 10px;
+            text-transform: uppercase;
+        }
+
+        div.mainwrapper div.header {
+            width: 1024px;
+            height: 100px;
+            background: #fff;
+        }
+
+            div.mainwrapper div.header a {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                float: left;
+            }
+
+            div.mainwrapper div.header img.logo {
+                margin: 15px 0 0 15px;
+                border: none;
+            }
+
+            div.mainwrapper div.header div.topiconsContainer {
+                width: 300px;
+                height: 20px;
+                float: right;
+                margin: 15px 15px 0 0;
+            }
+
+                div.mainwrapper div.header div.topiconsContainer div.userContainer {
+                    width: 180px;
+                    height: 20px;
+                    background: url(../../Documents/images/user.PNG) right top no-repeat;
+                    float: left;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    text-align: right !important;
+                    padding: 1px 18px 0 0;
+                    color: #0069a2;
+                    text-decoration: none;
+                }
+
+                div.mainwrapper div.header div.topiconsContainer div.logoutContainer a.logout,
+                div.mainwrapper div.header div.topiconsContainer div.logoutContainer a.logout:link div.mainwrapper div.header div.topiconsContainer div.logoutContainer a.logout:visited {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    text-align: right;
+                    padding: 1px 18px 0 0;
+                    color: #0069a2;
+                    text-decoration: none;
+                    display: block;
+                }
+
+
+
+                div.mainwrapper div.header div.topiconsContainer div.logoutContainer {
+                    width: 60px;
+                    height: 20px;
+                    background: url(../../Documents/images/logoutl.PNG) right top no-repeat;
+                    float: right;
+                }
+
+        div.mainwrapper div.nav {
+            width: 1024px;
+            height: 35px;
+            background: url(../../Documents/images/navbg.JPG) left top repeat-y;
+        }
+
+            div.mainwrapper div.nav a,
+            div.mainwrapper div.nav a:link,
+            div.mainwrapper div.nav a:visited {
+                padding: 10px 15px;
+                border-left: 1px solid #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;
+                display: block;
+                float: left;
+            }
+
+                div.mainwrapper div.nav a:hover, div.mainwrapper div.nav a.current {
+                    color: #fff;
+                    background: #006699;
+                }
+
+        div.mainwrapper div.contentarea {
+            width: 1024px;
+            min-height: 300px;
+            height: auto !important;
+            background: url(../../Documents/images/corner.JPG) right top no-repeat;
+            margin: 0;
+            padding: 10px 0 0 0;
+        }
+
+            div.mainwrapper div.contentarea div.grayContentArea {
+                width: 955px;
+                margin: 0 auto;
+                min-height: 200px;
+                background: #e5edf5;
+                border: 1px solid #fff;
+                box-shadow: 0 0 5px 0 #000;
+            }
+
+                div.mainwrapper div.contentarea div.grayContentArea h2 {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #006a4d;
+                    margin: 10px 0 0 10px;
+                    text-transform: uppercase;
+                }
+
+                div.mainwrapper div.contentarea div.grayContentArea h4 {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 11px;
+                    font-weight: bold;
+                    color: #006a4d;
+                    margin: 10px 0 0 10px;
+                    text-transform: uppercase;
+                }
+
+                div.mainwrapper div.contentarea div.grayContentArea p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    text-align: left;
+                    color: #666;
+                    line-height: 18px;
+                    margin: 10px 10px 0 10px;
+                }
+
+                div.mainwrapper div.contentarea div.grayContentArea a.smalllink {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: #0069aa;
+                    margin: 2px 0 0 10px;
+                    background: url(../../Documents/images/graysmallarrow.png) left 2px no-repeat;
+                    padding: 0 0 0 15px;
+                    text-decoration: none;
+                }
+
+                    div.mainwrapper div.contentarea div.grayContentArea a.smalllink:hover {
+                        color: #006a4d;
+                    }
+
+            div.mainwrapper div.contentarea div.leftContainer {
+                width: 641px;
+                float: left;
+                min-height: 300px;
+                height: auto !important;
+                border-top: 1px dotted #aaaaaa;
+                margin: 15px 0 0 32px;
+                border-right: 1px dotted #aaaaaa;
+            }
+
+            div.mainwrapper div.contentarea div.fullcontainer {
+                width: 99% !important;
+                margin: 0 auto !important;
+                border-right: none;
+                margin: 0 0 0 5px !important;
+            }
+
+            div.mainwrapper div.contentarea div.leftContainer table {
+                width: 95% !important;
+                margin: 10px auto;
+                border: 1px solid #DDDDDD;
+                border-bottom: 0;
+                border-right: 0;
+            }
+
+                div.mainwrapper div.contentarea div.leftContainer table tr td {
+                    border-bottom: 1px solid #DDDDDD;
+                    border-right: 1px solid #DDDDDD;
+                    color: #666;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    text-align: left;
+                    text-decoration: none;
+                    padding: 5px 0 5px 5px;
+                }
+
+                    div.mainwrapper div.contentarea div.leftContainer table tr td img {
+                        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+                        display: block;
+                        margin: 5px auto;
+                    }
+
+                    div.mainwrapper div.contentarea div.leftContainer table tr td input.btn {
+                        background: #0069a0;
+                        text-align: center;
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 3px 10px;
+                        border: none;
+                        cursor: pointer;
+                    }
+
+                        div.mainwrapper div.contentarea div.leftContainer table tr td input.btn:hover {
+                            color: #000;
+                        }
+
+                    div.mainwrapper div.contentarea div.leftContainer table tr td input.textbox {
+                        background-color: #f1f1f1;
+                        border: 1px solid #D7CECE;
+                        color: #676767;
+                        font-family: Arial,Helvetica,sans-serif;
+                        font-size: 13px;
+                        height: 25px;
+                        line-height: 26px;
+                        padding: 0 5px 0 10px;
+                        width: 230px;
+                    }
+
+                    div.mainwrapper div.contentarea div.leftContainer table tr td select {
+                        background-color: #f1f1f1;
+                        border: 1px solid #D7CECE;
+                        color: #676767;
+                        font-family: Arial,Helvetica,sans-serif;
+                        font-size: 13px;
+                        height: 28px;
+                        line-height: 26px;
+                        padding: 0 0 0 5px;
+                        width: 247px;
+                    }
+
+            div.mainwrapper div.contentarea div.rightContainer {
+                width: 318px;
+                float: left;
+                min-height: 300px;
+                height: auto !important;
+                border-top: 1px dotted #aaaaaa;
+                margin: 15px 0 0 0;
+            }
+
+                div.mainwrapper div.contentarea div.rightContainer div.imgContainer {
+                    border-bottom: 1px dotted #AAAAAA;
+                    padding: 7px 0 6px 10px;
+                    width: 98.5%;
+                }
+
+            div.mainwrapper div.contentarea div.leftContainer div.imgContainer {
+                border-bottom: 1px dotted #AAAAAA;
+                padding: 5px 0 6px 10px;
+                width: 98.5%;
+            }
+
+            div.mainwrapper div.contentarea div.leftContainer h3,
+            div.mainwrapper div.contentarea div.rightContainer h3 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                color: #006a4d;
+                margin: 10px 0 0 10px;
+                text-transform: uppercase;
+            }
+
+            div.mainwrapper div.contentarea div.rightContainer p,
+            div.mainwrapper div.contentarea div.leftContainer p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                text-align: left;
+                color: #666;
+                line-height: 18px;
+                margin: 10px 10px 0 10px;
+            }
+
+            div.mainwrapper div.contentarea div.rightContainer a,
+            div.mainwrapper div.contentarea a {
+                color: #ffffff;
+                font-family: Arial,Helvetica,sans-serif;
+                font-size: 12px;
+                height: 20px;
+                margin: 1px 0 0 10px;
+                padding: 4px 5px 0 1px;
+                text-decoration: none;
+                width: 50px;
+            }
+
+                div.mainwrapper div.contentarea div.rightContainer a:hover,
+                div.mainwrapper div.contentarea a:hover {
+                    font-weight: bold;
+                }
+
+        div.mainwrapper div.footer {
+            width: 1017px;
+            height: 30px;
+        }
+
+            div.mainwrapper div.footer a {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                color: #666;
+                margin: 2px 0 0 0px;
+                padding: 0 5px 0 5px;
+                text-decoration: none;
+                border-right: 1px solid #666;
+            }
+
+        div.mainContainer div.footer div.copyright {
+            color: #666666;
+            float: right;
+            font-size: 11px;
+            height: 25px;
+            margin: 17px 0 25px;
+            text-align: left;
+            text-decoration: none;
+            width: 22%;
+        }
+        div.footer {
+    margin: 31px 0 0 !important;
+}
+
+        div.footer div.copyright {
+    color: #666;
+    float: right;
+    font-size: 11px;
+    height: 25px;
+    margin: 48px 0 25px;
+    text-align: left;
+    text-decoration: none;
+    width: 30% !important;
+
+}
+        div.footer img {
+    border: 0 none;
+    float: left;
+    margin: 40px 0 0 25px;
+    
+}
+    </style>
+</head>
+<body>
+    <script>
+        function setFilter(btn) {
+            var ddl = document.getElementById('ddlFilter');
+            var search = document.getElementById('btnSearch');
+            if ((ddl != null) && (search != null)) {
+                var text = ddl.options[ddl.selectedIndex].value;
+                if (text == "") text = '0';
+                var attr = btn.href;
+
+                btn.href = btn.href + '&filter=' + text + '&keywrd=' + search.value;
+            }
+        }
+
+
+
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+
+    </script>
+    <script type="text/javascript">
+
+        function SetColor(elem) {
+            var m = $(elem).html();
+            var child = $(elem).children('a');
+            $('#btnhome').removeClass('current');
+            $('#btnactivities').removeClass('current');
+            $('#btndoc').removeClass('current');
+            $('#btniep').removeClass('current');
+            $('#btnconcent').removeClass('current');
+            $('#btncpswd').removeClass('current');
+            $('#btnrpt').removeClass('current');
+            $(child).addClass('current');
+        }
+
+    </script>
+
+    <div class="mainwrapper">
+        <div class="header">
+            <a href="#">
+             <%var objVal = Session["SchoolId"].ToString(); %>
+                <%if(objVal=="1"){ %>
+                <img src="../../Documents/Images/melmarkengland.png" width="477" height="62" alt="logo" class="logo" />
+                <%}else{ %>
+                <img src="../../Documents/Images/melmarkPennsylvania.png" width="477" height="62" alt="logo" class="logo" />
+                <% }%>
+            </a>
+            <div class="topiconsContainer">
+                <div class="userContainer"><b><%=Session["UserName"]%></b></div>
+                <div class="logoutContainer"><a class="logout" href="../Login/Login/">Logout</a></div>
+            </div>
+        </div>
+        <div class="nav">
+
+            <h2 id="btnhome" onclick="SetColor(this);">
+                <a href="/Home/HomePage?page=1">Home Page</a>
+            </h2>
+            <h2 id="btnactivities" onclick="SetColor(this);">
+                <a href="/Activity/ActivitiesList?page=2">Activities</a>
+            </h2>
+            <h2 id="btndoc" onclick="SetColor(this);">
+                <a href="/Document/DocumentLists?page=3">Documents</a>
+            </h2>
+            <h2 id="btniep">
+                <a href="/IEP/IEPLists?page=1">IEP's</a>
+            </h2>
+            <h2 id="btnconcent">
+                <a href="/Concent/ConcentList?page=5">Consent Forms</a>
+            </h2>
+            <h2 id="btncpswd">
+                <a href="/Login/ChangePasswrd?page=6">Change Password</a>
+            </h2>
+            <h2 id="btnrpt">
+                <a href="/Progress/ReportData?page=7">Progress Report</a>
+            </h2>
+
+
+        </div>
+        <div class="contentarea">
+            <div class="leftContainer fullcontainer">
+
+                <div class=" clear"></div>
+                <div class="middleContainer">
+                    <div id="ContentArea">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    </div>
+                </div>
+
+
+
+                <%--<div class="rightContainer">
+                    <div class="imgcontainer">
+                        <img src="../../Documents/images/boy.JPG" width="170" height="165" />
+                        <h4>Beaulieu, Joseph</h4>
+                    </div>
+
+                </div>--%>
+
+
+
+
+
+                <div class="clear"></div>
+
+                <div class="footer" style="border-bottom:1px dotted;">
+                    <img src="../../Documents/images/smllogo.JPG" width="109" height="20" />
+                    <div class="copyright">&copy; Copyright 2015, Melmark, Inc. All rights reserved.</div>
+                </div>
+            </div>
+            <br />
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+
+
+</html>

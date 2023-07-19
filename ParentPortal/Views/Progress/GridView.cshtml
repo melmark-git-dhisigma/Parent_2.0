@@ -1,0 +1,67 @@
+﻿@model ParentPortal.Models.ProgressModel
+
+@{
+    ViewBag.Title = "View1";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ProgressView</title>
+    <script src="~/Documents/JS/jquery-1.8.2.js"></script>
+
+    <script type="text/javascript">
+
+        
+
+    </script>
+
+
+</head>
+<body>
+    <div>
+
+        <table style="width:100%;" class="gridStyle">
+    <thead>
+        <tr class="HeaderStyle">
+           
+            <td style="width: 23%"><b>IEP Start Date</b>
+            </td>
+            <td style="width: 30%"><b>IEP End Date</b>
+            </td>
+            <td style="width: 23%"><b>Status</b>
+
+            </td>
+             <td style="width: 23%"><b>Report Date</b>
+            </td>
+             <td style="width: 23%"><b>View</b>
+            </td>
+        </tr>
+    </thead>
+
+          
+    @foreach (var item in Model.ProgressInfo)
+    {
+    <tr>        
+        <td>@item.startdate</td>
+        <td>@item.enddate</td>
+        <td>@item.Status</td>
+        <td>@item.rptdate</td>
+        <td>
+
+            <a id="@item.iepid" style="cursor:pointer;" onclick="showProgress(this.id)">View</a>
+
+
+        </td>
+    </tr>
+    }
+</table>
+
+
+       
+    </div>
+</body>
+</html>

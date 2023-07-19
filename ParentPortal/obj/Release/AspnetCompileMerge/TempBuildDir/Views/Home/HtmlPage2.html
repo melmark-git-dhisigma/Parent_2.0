@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        td {
+            border: 1px solid lightgrey;
+            border-collapse: collapse;
+            border-spacing: 0;
+            /*font-weight: 700;*/
+            font-size: medium;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .maintable {
+            width: 80%;
+            border: none;
+        }
+
+        .boldText {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .auto-style1 {
+            list-style-type: square;
+        }
+    </style>
+</head>
+<body>
+    <table class="maintable" align="center">
+        <tr>
+            <td style="border: none; font-style: italic;" class="boldText">CLIENT PROFILE / PROTOCOL SUMMARY</td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">DATE UPDATED:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">NAME:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border: none;">
+                <table style="float: left; width: 40%;">
+                    <tr>
+                        <td class="boldText">GENDER:</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table style="float: left; width: 60%;">
+                    <tr>
+                        <td class="boldText">BIRTHDATE:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;" colspan="2"><br />
+                <table>
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">CONTACT INFORMATION</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">RESIDENT / INDIVIDUAL</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">CURRENT
+
+ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">PHONE NUMBER:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText" colspan="2"><br />FUNDING SOURCE:<br /><br /></td>
+                    </tr>
+                </table><br />
+            </td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">PRIMARY CONTACT</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">HOME PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WORK PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">CELL PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">E-MAIL ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">LEGAL GUARDIAN</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">HOME PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WORK PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">CELL PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">E-MAIL ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">LEGAL GUARDIAN</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">HOME PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WORK PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">CELL PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">E-MAIL ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">SUPPORT COORDINATOR</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WORK PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">CELL PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">E-MAIL ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">ADVOCATE</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" class="boldText">ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WORK PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">CELL PHONE #:</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">E-MAIL ADDRESS:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;" colspan="2">
+                <table>
+                    <tr>
+                        <td colspan="1" class="boldText" style="background-color:#F2EEEE;">DIAGNOSES:</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;" colspan="2">
+                <table>
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">LEVEL OF SUPERVISION</td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;" colspan="2">
+                <table>
+                    <tr>
+                        <td colspan="2" class="boldText">GENERAL</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">BATHROOM</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">ON CAMPUS</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">WHEN TRANSPORTING</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">OFF CAMPUS</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">POOL / SWIMMING</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">VAN</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td colspan="2" class="boldText">HOME / RESIDENTIAL</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">COMMON AREAS</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">BEDROOM AWAKE</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">BEDROOM ASLEEP</td>
+                        <td></td>
+                    </tr>
+
+                </table><br />
+            </td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td colspan="2" class="boldText">DAY PROGRAM</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">TASK / BREAK</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">TRANSITIONS INSIDE</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">TRANSITIONS UNEVEN GROUND</td>
+                        <td></td>
+                    </tr>
+
+                </table><br />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <table class="maintable" align="center">
+        <tr>
+            <td style="border: none; font-style: italic;" class="boldText">CLIENT PROFILE / PROTOCOL SUMMARY</td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">DATE UPDATED:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">NAME:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border: none;">
+                <table style="float: left; width: 40%;">
+                    <tr>
+                        <td class="boldText">GENDER:</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table style="float: left; width: 60%;">
+                    <tr>
+                        <td class="boldText">BIRTHDATE:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;"><br />
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">EVACUATION SKILLS <span style="font-size: 10px;">(HOW DOES THIS PERSON EVACUATE DURING FIRE DRILLS, WHAT ASSISTANCE DO THEY NEED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>RISK OF RESISTANCE:</li>
+                                <li>MOBILITY:</li>
+                                <li>NEED FOR EXTRA HELP:</li>
+                                <li>RESPONSE TO INSTRUCTIONS:</li>
+                                <li>CONSCIOUSNESS:</li>
+                                <li>WAKING RESPONSE:</li>
+                            </ul>
+
+                        </td>
+                    </tr>
+
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" colspan="2" style="background-color:#F2EEEE;">MEDICAL INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">ALLERGIES</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">SEIZURES</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">DIET</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="boldText">OTHER</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">LIFTING / TRANSFERS<span style="font-size: 10px;">(HOW DOES THIS PERSON TRANSFER, HOW ARE THEY LIFTED – IF APPLICABLE)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">AMBULATION<span style="font-size: 10px;"> (HOW DOES THIS PERSON GET FROM PLACE TO PLACE)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">TOILETING <span style="font-size: 10px;">(GENERAL INFORMATION-WHAT ARE THEY ABLE TO DO-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">EATING<span style="font-size: 10px;"> (GENERAL INFORMATION-WHAT ARE THEY ABLE TO DO-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">SHOWERING<span style="font-size: 10px;"> (GENERAL INFORMATION-WHAT ARE THEY ABLE TO DO-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">TOOTHBRUSHING<span style="font-size: 10px;"> (GENERAL INFORMATION-WHAT ARE THEY ABLE TO DO-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">DRESSING <span style="font-size: 10px;">(GENERAL INFORMATION-WHAT ARE THEY ABLE TO DO-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">SKIN CARE/SKIN INTEGRITY <span style="font-size: 10px;">(GENERAL INFORMATION-SPECIAL CARE NEEDS-WHAT KIND OF SUPPORT/ASSISTANCE IS NEEDED)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">COMMUNICATION <span style="font-size: 10px;">(HOW DOES THIS PERSON COMMUNICATE, WORDS USED, WORDS TO AVOID, ETC)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <br />
+    <table class="maintable" align="center">
+        <tr>
+            <td style="border: none; font-style: italic;" class="boldText">CLIENT PROFILE / PROTOCOL SUMMARY</td>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">DATE UPDATED:</td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td style="border: none;">
+                <table>
+                    <tr>
+                        <td class="boldText">NAME:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+            <td style="border: none;">
+                <table style="float: left; width: 40%;">
+                    <tr>
+                        <td class="boldText">GENDER:</td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table style="float: left; width: 60%;">
+                    <tr>
+                        <td class="boldText">BIRTHDATE:</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;"><br />
+                <table style="width:100%;">
+                    <tr>
+                        <td colspan="4" class="boldText" style="background-color:#F2EEEE;">ADAPTIVE EQUIPMENT / HEALTH RELATED PROTECTIONS</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;" class="boldText">ITEM</td>
+                        <td style="text-align:center;" class="boldText">SCHEDULE FOR USE</td>
+                        <td style="text-align:center;" class="boldText">STORAGE LOCATION</td>
+                        <td style="text-align:center;" class="boldText">CLEANING INSTRUCTIONS</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width:100%;">
+                    <tr>
+                        <td colspan="3" class="boldText" style="background-color:#F2EEEE;">BASIC BEHAVIORAL INFORMATION</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;" class="boldText">TARGET BEHAVIOR
+<br /><span style="font-size:10px;">(FOR ACCELERATION & DECELERATION)</span></td>
+                        <td style="text-align:center;" class="boldText">DEFINITION</td>
+                        <td style="text-align:center;" class="boldText">RESPONSE / STRATEGY</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3"></td>
+                        <td rowspan="3"></td>
+                        <td class="boldText" style="font-size:12px;">ANTECEDENT:</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText" style="font-size:12px;">FCT:</td>
+                    </tr>
+                    <tr>
+                        <td class="boldText" style="font-size:12px;">CONSEQUENCE:</td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 50%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">PREFERRED ACTIVITIES</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">GENERAL INFORMATION <span style="font-size: 10px;">(IMPORTANT TO KNOW, WHAT GETS THIS PERSON UPSET, WHAT MAKES THEM HAPPY, THINGS TO WATCH OUT FOR,
+
+ANY IMPORTANT STRUCTURE NEEDED IN THEIR DAY, ROUTINES, PREFERRED ITEMS)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="border: none;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="boldText" style="background-color:#F2EEEE;">SUGGESTED PROACTIVE ENVIRONMENTAL PROCEDURES <span style="font-size: 10px;">(WHAT CAN BE DONE IN THE ENVIRONMENT TO SUPPORT THIS
+
+PERSON, HOW SHOULD THE STAFF RESPOND IF THIS PERSON IS UPSET, ETC)</span></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="auto-style1">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table><br />
+            </td>
+        </tr>
+    </table>
+    <br /><hr /><br />
+</body>
+</html>

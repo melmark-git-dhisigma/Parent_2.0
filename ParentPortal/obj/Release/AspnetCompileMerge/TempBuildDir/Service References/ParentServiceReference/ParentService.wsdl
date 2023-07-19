@@ -1,0 +1,1531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ParentService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" />
+      <xs:element name="Login">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="model" nillable="true" type="q1:LoginDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoginResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LoginResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="model" nillable="true" type="q2:LoginDetails" />
+            <xs:element minOccurs="0" name="ParentID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ChangePasswordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ChangePasswordResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStudentId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetStudentIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetStudentIdResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSchoolId">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSchoolIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetSchoolIdResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentName">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentNameResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetParentNameResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCountry">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCountryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getCountryResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getState">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getStateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="getStateResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetImageUrl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetImageUrlResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetImageUrlResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DownloadDoc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="documentId" type="xs:int" />
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DownloadDocResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DownloadDocResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetParentDetailsResult" nillable="true" type="q3:ParentDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentDetailsPA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetParentDetailsPAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetParentDetailsPAResult" nillable="true" type="q4:ParentDetailsPA" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CLientsReport">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SchoolID" type="xs:int" />
+            <xs:element minOccurs="0" name="StudentID" type="xs:int" />
+            <xs:element minOccurs="0" name="IEPID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CLientsReportResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="CLientsReportResult" nillable="true" type="q5:ProgressDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProgressReport">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProgressReportResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetProgressReportResult" nillable="true" type="q6:ArrayOfReportDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetIEPLists">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetIEPListsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetIEPListsResult" nillable="true" type="q7:ArrayOfIEPDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinaryDoc">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+            <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBinaryDocResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetBinaryDocResult" nillable="true" type="q8:ArrayOfDocDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalRecordIEP">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalRecordIEPResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetTotalRecordIEPResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetActivities">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetActivitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetActivitiesResult" nillable="true" type="q9:ArrayOfActivities" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetActivitiesList">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ActivityId" type="xs:int" />
+            <xs:element minOccurs="0" name="AType" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetActivitiesListResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetActivitiesListResult" nillable="true" type="q10:ArrayOfActivitiesList" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalActivityCount">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalActivityCountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetTotalActivityCountResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllStatusForDDL">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetAllStatusForDDLResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" minOccurs="0" name="GetAllStatusForDDLResult" nillable="true" type="q11:ArrayOfListItem" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocuments">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDocumentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetDocumentsResult" nillable="true" type="q12:ArrayOfDocuments" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalDocumentCount">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalDocumentCountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetTotalDocumentCountResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FileUpload">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="DocName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="DocType" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="other" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="DocPath" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ParentId" type="xs:int" />
+            <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FileUploadResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="FileUploadResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetConcents">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="SchoolId" type="xs:int" />
+            <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
+            <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetConcentsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetConcentsResult" nillable="true" type="q13:ArrayOfConcents" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalConcentForms">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+            <xs:element minOccurs="0" name="keyword" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="filter" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTotalConcentFormsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetTotalConcentFormsResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Delete">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DeleteResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SignUpdate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="data" nillable="true" type="xs:base64Binary" />
+            <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SignUpdateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="SignUpdateResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetItemsForBehaviour">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="BehaviourName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="StudentId" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetItemsForBehaviourResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="GetItemsForBehaviourResult" nillable="true" type="q14:ArrayOfBehaviours" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="LoginDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConfirmPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsValid" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentID" type="xs:int" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="LoginDetails" nillable="true" type="tns:LoginDetails" />
+      <xs:complexType name="ParentDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseManagerEdu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CaseManagerRes" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CitizenShip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CrntIEPExpireDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CrntIEPStartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateInitEligibleforSpclEducation" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateofMostRecentSpecialEducationEvaluations" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateofNextScheduled3YearEvaluation" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DischargeDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DistinguishMarks" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmergencySchool" nillable="true" type="tns:ArrayOfEmergencySchoolContcts" />
+          <xs:element minOccurs="0" name="EyeColor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GuardianStat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HairColor" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Height" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InsuranceDetl" nillable="true" type="tns:ArrayOfInsuranceDetails" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LegalCompetencyStat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LocationAfterDischarge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MedicalInform" nillable="true" type="tns:MedicalDetails" />
+          <xs:element minOccurs="0" name="MelmarkNewEnglandsFollowUpResponsibilities" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherStateInvolveStat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParentMaritalStat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Race" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RefIEPInform" nillable="true" type="tns:ArrayOfRefIep" />
+          <xs:element minOccurs="0" name="Relations" nillable="true" type="tns:ArrayOfRelationDetails" />
+          <xs:element minOccurs="0" name="SchoolsAttended" nillable="true" type="tns:ArrayOfSchoolAttended" />
+          <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ParentDetails" nillable="true" type="tns:ParentDetails" />
+      <xs:complexType name="ArrayOfEmergencySchoolContcts">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EmergencySchoolContcts" nillable="true" type="tns:EmergencySchoolContcts" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEmergencySchoolContcts" nillable="true" type="tns:ArrayOfEmergencySchoolContcts" />
+      <xs:complexType name="EmergencySchoolContcts">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EmergencySchoolContcts" nillable="true" type="tns:EmergencySchoolContcts" />
+      <xs:complexType name="ArrayOfInsuranceDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceDetails" nillable="true" type="tns:InsuranceDetails" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfInsuranceDetails" nillable="true" type="tns:ArrayOfInsuranceDetails" />
+      <xs:complexType name="InsuranceDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InsuranceType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PolicyHolder" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InsuranceDetails" nillable="true" type="tns:InsuranceDetails" />
+      <xs:complexType name="MedicalDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Allergies" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CMedications" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Capabilities" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Diagnosis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DtExam" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Limitations" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Preferences" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SBCharacteristics" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SelfPA" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MedicalDetails" nillable="true" type="tns:MedicalDetails" />
+      <xs:complexType name="ArrayOfRefIep">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RefIep" nillable="true" type="tns:RefIep" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRefIep" nillable="true" type="tns:ArrayOfRefIep" />
+      <xs:complexType name="RefIep">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReferringAgency" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SourceofTuition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RefIep" nillable="true" type="tns:RefIep" />
+      <xs:complexType name="ArrayOfRelationDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationDetails" nillable="true" type="tns:RelationDetails" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRelationDetails" nillable="true" type="tns:ArrayOfRelationDetails" />
+      <xs:complexType name="RelationDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CellPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OtherPhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrmryLanguage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Relation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="WorkPhone" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RelationDetails" nillable="true" type="tns:RelationDetails" />
+      <xs:complexType name="ArrayOfSchoolAttended">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="SchoolAttended" nillable="true" type="tns:SchoolAttended" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSchoolAttended" nillable="true" type="tns:ArrayOfSchoolAttended" />
+      <xs:complexType name="SchoolAttended">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactSequence" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="DateFrom" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTo" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SchoolName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SchoolAttended" nillable="true" type="tns:SchoolAttended" />
+      <xs:complexType name="ParentDetailsPA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdaptiveEquip" nillable="true" type="tns:ArrayOfAdaptiveEquipment" />
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Advocate" nillable="true" type="tns:RelationDetails" />
+          <xs:element minOccurs="0" name="Allergies" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ambulation" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="BasicBehaviouralInfo" nillable="true" type="tns:ArrayOfBasicBehaviouralInfo" />
+          <xs:element minOccurs="0" name="BathRoom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BedroomAsleep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BedroomAwake" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommonAreas" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Communication" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="Consciousness" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Diagnoses" nillable="true" type="tns:ArrayOfDiagnoses" />
+          <xs:element minOccurs="0" name="Diet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dressing" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="Eating" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FundingSource" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GeneralInformation" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="GuardianStat" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Height" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LegalGrdn1" nillable="true" type="tns:RelationDetails" />
+          <xs:element minOccurs="0" name="LegalGrdn2" nillable="true" type="tns:RelationDetails" />
+          <xs:element minOccurs="0" name="LiftingOrTransfers" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mobility" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NeedforExtraHelp" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OffCampus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OnCampus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pool_Swimming" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PreferredActivities" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="PrimaryCntct" nillable="true" type="tns:RelationDetails" />
+          <xs:element minOccurs="0" name="Race" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ResponseToInstructions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RiskofResistance" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Seizures" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Showering" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="SkinCareOrSkinIntegrity" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="SuggestedProactiveEnvironmentalProcedures" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="SupportCord" nillable="true" type="tns:RelationDetails" />
+          <xs:element minOccurs="0" name="Task_Break" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Toileting" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="ToothBrushing" nillable="true" type="tns:ArrayOfBehaviours" />
+          <xs:element minOccurs="0" name="TransitionsInside" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TransitionsUneven" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Van" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="WakingResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="WhenTransporting" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ParentDetailsPA" nillable="true" type="tns:ParentDetailsPA" />
+      <xs:complexType name="ArrayOfAdaptiveEquipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AdaptiveEquipment" nillable="true" type="tns:AdaptiveEquipment" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfAdaptiveEquipment" nillable="true" type="tns:ArrayOfAdaptiveEquipment" />
+      <xs:complexType name="AdaptiveEquipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CleaningInstructions" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Item" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScheduleForUse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StorageLocation" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AdaptiveEquipment" nillable="true" type="tns:AdaptiveEquipment" />
+      <xs:complexType name="ArrayOfBehaviours">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Behaviours" nillable="true" type="tns:Behaviours" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBehaviours" nillable="true" type="tns:ArrayOfBehaviours" />
+      <xs:complexType name="Behaviours">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BehaviorName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BehaviourId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Behaviours" nillable="true" type="tns:Behaviours" />
+      <xs:complexType name="ArrayOfBasicBehaviouralInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicBehaviouralInfo" nillable="true" type="tns:BasicBehaviouralInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfBasicBehaviouralInfo" nillable="true" type="tns:ArrayOfBasicBehaviouralInfo" />
+      <xs:complexType name="BasicBehaviouralInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Antecedent" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Consequence" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Definition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FCT" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TargetBehaviour" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="BasicBehaviouralInfo" nillable="true" type="tns:BasicBehaviouralInfo" />
+      <xs:complexType name="ArrayOfDiagnoses">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Diagnoses" nillable="true" type="tns:Diagnoses" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDiagnoses" nillable="true" type="tns:ArrayOfDiagnoses" />
+      <xs:complexType name="Diagnoses">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DiagnosesId" type="xs:int" />
+          <xs:element minOccurs="0" name="DiagnosesName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Diagnoses" nillable="true" type="tns:Diagnoses" />
+      <xs:complexType name="ProgressDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DOB" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GoalDt" nillable="true" type="tns:ArrayOfGoalData" />
+          <xs:element minOccurs="0" name="GoalName" nillable="true" type="tns:GoalData" />
+          <xs:element minOccurs="0" name="Goalid" nillable="true" type="tns:GoalData" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="IEPDtFrom" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IEPDtTo" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LessonplanName" nillable="true" type="tns:GoalData" />
+          <xs:element minOccurs="0" name="SclDistrictAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SclDistrictContact" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SclDistrictName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StudentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="schooladdr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stdtIEPId" type="xs:int" />
+          <xs:element minOccurs="0" name="student" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ProgressDetails" nillable="true" type="tns:ProgressDetails" />
+      <xs:complexType name="ArrayOfGoalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GoalData" nillable="true" type="tns:GoalData" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGoalData" nillable="true" type="tns:ArrayOfGoalData" />
+      <xs:complexType name="GoalData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GoalLPRelId" type="xs:int" />
+          <xs:element minOccurs="0" name="GoalName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GoalNo" type="xs:int" />
+          <xs:element minOccurs="0" name="Goalid" type="xs:int" />
+          <xs:element minOccurs="0" name="LessonplanName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Lessonplanid" type="xs:int" />
+          <xs:element minOccurs="0" name="PlcacementList" nillable="true" type="tns:ArrayOfGridListPlacement" />
+          <xs:element minOccurs="0" name="ProgressInfo" nillable="true" type="tns:ArrayOfReportDetails" />
+          <xs:element minOccurs="0" name="RptList" nillable="true" type="tns:ArrayOfReportInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GoalData" nillable="true" type="tns:GoalData" />
+      <xs:complexType name="ArrayOfGridListPlacement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GridListPlacement" nillable="true" type="tns:GridListPlacement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGridListPlacement" nillable="true" type="tns:ArrayOfGridListPlacement" />
+      <xs:complexType name="GridListPlacement">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="objective1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objective2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="objective3" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GridListPlacement" nillable="true" type="tns:GridListPlacement" />
+      <xs:complexType name="ArrayOfReportDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportDetails" nillable="true" type="tns:ReportDetails" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfReportDetails" nillable="true" type="tns:ArrayOfReportDetails" />
+      <xs:complexType name="ReportDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="enddate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="iepid" type="xs:int" />
+          <xs:element minOccurs="0" name="rptdate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="startdate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReportDetails" nillable="true" type="tns:ReportDetails" />
+      <xs:complexType name="ArrayOfReportInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportInfo" nillable="true" type="tns:ReportInfo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfReportInfo" nillable="true" type="tns:ArrayOfReportInfo" />
+      <xs:complexType name="ReportInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="VisibleToParent" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="goalid" type="xs:int" />
+          <xs:element minOccurs="0" name="rptdate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="rptid" type="xs:int" />
+          <xs:element minOccurs="0" name="rptinfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="stdtIEPId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ReportInfo" nillable="true" type="tns:ReportInfo" />
+      <xs:complexType name="ArrayOfIEPDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IEPDetails" nillable="true" type="tns:IEPDetails" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfIEPDetails" nillable="true" type="tns:ArrayOfIEPDetails" />
+      <xs:complexType name="IEPDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IEPId" type="xs:int" />
+          <xs:element minOccurs="0" name="IEPYear" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="IEPDetails" nillable="true" type="tns:IEPDetails" />
+      <xs:complexType name="ArrayOfDocDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DocDetails" nillable="true" type="tns:DocDetails" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDocDetails" nillable="true" type="tns:ArrayOfDocDetails" />
+      <xs:complexType name="DocDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Data" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DocDetails" nillable="true" type="tns:DocDetails" />
+      <xs:complexType name="ArrayOfActivities">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Activities" nillable="true" type="tns:Activities" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfActivities" nillable="true" type="tns:ArrayOfActivities" />
+      <xs:complexType name="Activities">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityId" type="xs:int" />
+          <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Activities" nillable="true" type="tns:Activities" />
+      <xs:complexType name="ArrayOfActivitiesList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ActivitiesList" nillable="true" type="tns:ActivitiesList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfActivitiesList" nillable="true" type="tns:ArrayOfActivitiesList" />
+      <xs:complexType name="ActivitiesList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivityId" type="xs:int" />
+          <xs:element minOccurs="0" name="ActivityName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ActivityType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BehaviourAnalyst" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Date" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ExpiredOn" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="PrimaryNurse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Program" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitClerk" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ActivitiesList" nillable="true" type="tns:ActivitiesList" />
+      <xs:complexType name="ArrayOfDocuments">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Documents" nillable="true" type="tns:Documents" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDocuments" nillable="true" type="tns:ArrayOfDocuments" />
+      <xs:complexType name="Documents">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DocumentId" type="xs:int" />
+          <xs:element minOccurs="0" name="DocumentName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentPath" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Other" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Types" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Documents" nillable="true" type="tns:Documents" />
+      <xs:complexType name="ArrayOfConcents">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Concents" nillable="true" type="tns:Concents" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfConcents" nillable="true" type="tns:ArrayOfConcents" />
+      <xs:complexType name="Concents">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConcentForm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ConcentId" type="xs:int" />
+          <xs:element minOccurs="0" name="SignedOn" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Concents" nillable="true" type="tns:Concents" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Web.UI.WebControls" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfListItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ListItem" nillable="true" type="tns:ListItem" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfListItem" nillable="true" type="tns:ArrayOfListItem" />
+      <xs:complexType name="ListItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Selected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ListItem" nillable="true" type="tns:ListItem" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IParentService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetStudentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentId" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetStudentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetSchoolId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolId" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetSchoolId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchoolIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentName" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_getCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCountry" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_getCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_getState_InputMessage">
+    <wsdl:part name="parameters" element="tns:getState" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_getState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetImageUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageUrl" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetImageUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_DownloadDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDoc" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_DownloadDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentDetails" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentDetailsPA_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentDetailsPA" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetParentDetailsPA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParentDetailsPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_CLientsReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:CLientsReport" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_CLientsReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CLientsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetProgressReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgressReport" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetProgressReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProgressReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetIEPLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIEPLists" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetIEPLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIEPListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetBinaryDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBinaryDoc" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetBinaryDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBinaryDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalRecordIEP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalRecordIEP" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalRecordIEP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalRecordIEPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetActivitiesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesList" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetActivitiesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalActivityCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalActivityCount" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalActivityCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalActivityCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetAllStatusForDDL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStatusForDDL" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetAllStatusForDDL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStatusForDDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalDocumentCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalDocumentCount" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalDocumentCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalDocumentCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_FileUpload_InputMessage">
+    <wsdl:part name="parameters" element="tns:FileUpload" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_FileUpload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FileUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetConcents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConcents" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetConcents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConcentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalConcentForms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalConcentForms" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetTotalConcentForms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalConcentFormsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_SignUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_SignUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetItemsForBehaviour_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsForBehaviour" />
+  </wsdl:message>
+  <wsdl:message name="IParentService_GetItemsForBehaviour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsForBehaviourResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IParentService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/Login" message="tns:IParentService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/LoginResponse" message="tns:IParentService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/ChangePassword" message="tns:IParentService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/ChangePasswordResponse" message="tns:IParentService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetStudentId" message="tns:IParentService_GetStudentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetStudentIdResponse" message="tns:IParentService_GetStudentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetSchoolId" message="tns:IParentService_GetSchoolId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetSchoolIdResponse" message="tns:IParentService_GetSchoolId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetParentName" message="tns:IParentService_GetParentName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetParentNameResponse" message="tns:IParentService_GetParentName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/getCountry" message="tns:IParentService_getCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/getCountryResponse" message="tns:IParentService_getCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/getState" message="tns:IParentService_getState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/getStateResponse" message="tns:IParentService_getState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetImageUrl" message="tns:IParentService_GetImageUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetImageUrlResponse" message="tns:IParentService_GetImageUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/DownloadDoc" message="tns:IParentService_DownloadDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/DownloadDocResponse" message="tns:IParentService_DownloadDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetParentDetails" message="tns:IParentService_GetParentDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetParentDetailsResponse" message="tns:IParentService_GetParentDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParentDetailsPA">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetParentDetailsPA" message="tns:IParentService_GetParentDetailsPA_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetParentDetailsPAResponse" message="tns:IParentService_GetParentDetailsPA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CLientsReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/CLientsReport" message="tns:IParentService_CLientsReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/CLientsReportResponse" message="tns:IParentService_CLientsReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgressReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetProgressReport" message="tns:IParentService_GetProgressReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetProgressReportResponse" message="tns:IParentService_GetProgressReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIEPLists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetIEPLists" message="tns:IParentService_GetIEPLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetIEPListsResponse" message="tns:IParentService_GetIEPLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetBinaryDoc" message="tns:IParentService_GetBinaryDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetBinaryDocResponse" message="tns:IParentService_GetBinaryDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalRecordIEP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetTotalRecordIEP" message="tns:IParentService_GetTotalRecordIEP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetTotalRecordIEPResponse" message="tns:IParentService_GetTotalRecordIEP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetActivities" message="tns:IParentService_GetActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetActivitiesResponse" message="tns:IParentService_GetActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetActivitiesList" message="tns:IParentService_GetActivitiesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetActivitiesListResponse" message="tns:IParentService_GetActivitiesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalActivityCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetTotalActivityCount" message="tns:IParentService_GetTotalActivityCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetTotalActivityCountResponse" message="tns:IParentService_GetTotalActivityCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStatusForDDL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetAllStatusForDDL" message="tns:IParentService_GetAllStatusForDDL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetAllStatusForDDLResponse" message="tns:IParentService_GetAllStatusForDDL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetDocuments" message="tns:IParentService_GetDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetDocumentsResponse" message="tns:IParentService_GetDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalDocumentCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetTotalDocumentCount" message="tns:IParentService_GetTotalDocumentCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetTotalDocumentCountResponse" message="tns:IParentService_GetTotalDocumentCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/FileUpload" message="tns:IParentService_FileUpload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/FileUploadResponse" message="tns:IParentService_FileUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConcents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetConcents" message="tns:IParentService_GetConcents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetConcentsResponse" message="tns:IParentService_GetConcents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalConcentForms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetTotalConcentForms" message="tns:IParentService_GetTotalConcentForms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetTotalConcentFormsResponse" message="tns:IParentService_GetTotalConcentForms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/Delete" message="tns:IParentService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/DeleteResponse" message="tns:IParentService_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/SignUpdate" message="tns:IParentService_SignUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/SignUpdateResponse" message="tns:IParentService_SignUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsForBehaviour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IParentService/GetItemsForBehaviour" message="tns:IParentService_GetItemsForBehaviour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IParentService/GetItemsForBehaviourResponse" message="tns:IParentService_GetItemsForBehaviour_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IParentService" type="tns:IParentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IParentService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IParentService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentId">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetStudentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchoolId">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetSchoolId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentName">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetParentName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCountry">
+      <soap:operation soapAction="http://tempuri.org/IParentService/getCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getState">
+      <soap:operation soapAction="http://tempuri.org/IParentService/getState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageUrl">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetImageUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadDoc">
+      <soap:operation soapAction="http://tempuri.org/IParentService/DownloadDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentDetails">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetParentDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParentDetailsPA">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetParentDetailsPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CLientsReport">
+      <soap:operation soapAction="http://tempuri.org/IParentService/CLientsReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgressReport">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetProgressReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIEPLists">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetIEPLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryDoc">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetBinaryDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalRecordIEP">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetTotalRecordIEP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesList">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetActivitiesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalActivityCount">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetTotalActivityCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStatusForDDL">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetAllStatusForDDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalDocumentCount">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetTotalDocumentCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpload">
+      <soap:operation soapAction="http://tempuri.org/IParentService/FileUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConcents">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetConcents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalConcentForms">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetTotalConcentForms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IParentService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpdate">
+      <soap:operation soapAction="http://tempuri.org/IParentService/SignUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemsForBehaviour">
+      <soap:operation soapAction="http://tempuri.org/IParentService/GetItemsForBehaviour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ParentService">
+    <wsdl:port name="BasicHttpBinding_IParentService" binding="tns:BasicHttpBinding_IParentService">
+      <soap:address location="http://localhost:50145/107Parent%20Service1.3/ParentService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

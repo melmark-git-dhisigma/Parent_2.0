@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ParentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdmissionDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BirthPlace" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CaseManagerEdu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CaseManagerRes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CitizenShip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrntIEPExpireDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrntIEPStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateInitEligibleforSpclEducation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateofMostRecentSpecialEducationEvaluations" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateofNextScheduled3YearEvaluation" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DischargeDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DistinguishMarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EyeColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuardianStat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HairColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Height" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InsuranceDetl" nillable="true" type="tns:ArrayOfInsuranceDetails" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalCompetencyStat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationAfterDischarge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MelmarkNewEnglandsFollowUpResponsibilities" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherStateInvolveStat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentMaritalStat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Race" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relations" nillable="true" type="tns:ArrayOfRelationDetails" />
+      <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParentDetails" nillable="true" type="tns:ParentDetails" />
+  <xs:complexType name="ArrayOfInsuranceDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceDetails" nillable="true" type="tns:InsuranceDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsuranceDetails" nillable="true" type="tns:ArrayOfInsuranceDetails" />
+  <xs:complexType name="InsuranceDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InsuranceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyHolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuranceDetails" nillable="true" type="tns:InsuranceDetails" />
+  <xs:complexType name="ArrayOfRelationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RelationDetails" nillable="true" type="tns:RelationDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRelationDetails" nillable="true" type="tns:ArrayOfRelationDetails" />
+  <xs:complexType name="RelationDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtherPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrmryLanguage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Relation" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelationDetails" nillable="true" type="tns:RelationDetails" />
+</xs:schema>

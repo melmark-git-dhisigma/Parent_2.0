@@ -1,0 +1,6 @@
+03/16/2017 10:23:56
+Connection : Data Source=sqltest;Initial Catalog=MelmarkNE1;User ID=sa;Password=sqltest
+03/16/2017 10:23:56
+FileLocation : H:/MELMARK-BACKUPS/SourceCode[2017-03-08]/107Parent1.3/ParentPortal/TemplateAndXml
+03/16/2017 10:23:56
+path : H:/MELMARK-BACKUPS/SourceCode[2017-03-08]/107Parent1.3/ParentPortal/TemplateAndXml/Temp
